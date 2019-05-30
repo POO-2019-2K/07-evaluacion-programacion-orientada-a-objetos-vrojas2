@@ -40,10 +40,10 @@ Al seleccionarla mostrará el listado de tareas ordenado por el nombre de la tar
 
 ## Evaluación
 
-(6 puntos) Requerimientos. El programa cumple con los requerimientos que se solicitan en la especificación
-(1 punto) Buenas Prácticas de Programación. Uso de buenas prácticas de programación, como nombres de estructuras (variables, métodos, clases, etc.), consistencia en la organización del código, organización y facilidad de lectura y entendimiento
-(1 punto) Orientación a Objetos. Uso correcta de los principios de la programación orientada a objetos
-(2 puntos) Presentación. Apariencia visual, mensajes para el usuario, claridad en la interacción, ortografía
+ - (6 puntos) Requerimientos. El programa cumple con los requerimientos que se solicitan en la especificación
+- ( 1 punto) Buenas Prácticas de Programación. Uso de buenas prácticas de programación, como nombres de estructuras (variables, métodos, clases, etc.), consistencia en la organización del código, organización y facilidad de lectura y entendimiento
+- (1 punto) Orientación a Objetos. Uso correcta de los principios de la programación orientada a objetos
+- (2 puntos) Presentación. Apariencia visual, mensajes para el usuario, claridad en la interacción, ortografía
 
 ## Requisitos
 
