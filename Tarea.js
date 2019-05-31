@@ -20,7 +20,7 @@ export default class Tarea {
     return this._dateFin;
   }
 
-  getBirthdayAsString() {
+  getDateFinAsString() {
     let date =
       this._dateFin.getDate() +
       "/" +
@@ -30,12 +30,12 @@ export default class Tarea {
     return date;
   }
   
-  getAge() {
+  getTime() {
     let oneDay = 24 * 60 * 60 * 1000;
-    let oneYear = oneDay * 365;
-    let differenceMs = new Date() - this._dateFin;
+    let oneYear = oneDay;
+    let differenceMs = this._dateFin - new Date();
     let age = Math.trunc(differenceMs / oneYear);
   
-    return age;
+    return age+1;
   }
 }

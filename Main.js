@@ -24,11 +24,8 @@ class Main {
             };
             let tarea = new Tarea(objTarea);
             tabla.addContacto(tarea);
-        }   
-    });
-
-    document.querySelector("#buttonAge").addEventListener("click", () => {
-      tabla.showAge();
+        }
+        tabla.showTime();
     });
 
   }

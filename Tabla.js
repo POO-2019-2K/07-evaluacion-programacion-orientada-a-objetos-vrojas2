@@ -34,12 +34,12 @@ export default class Tabla {
     row.insertCell(3);
 
     cellName.appendChild(document.createTextNode(tarea.name));
-    cellDateFin.appendChild(document.createTextNode(tarea.getBirthdayAsString()));
-    cellAge.appendChild(document.createTextNode(tarea.getAge()));
+    cellDateFin.appendChild(document.createTextNode(tarea.getDateFinAsString()));
+    cellAge.appendChild(document.createTextNode(tarea.getTime()));
 
     let objTarea = {
       name: tarea.name,
-      dateFin: tarea.dateFin,
+      dateFin: tarea.dateFin
     };
 
     this._tareas.push(objTarea);
@@ -69,19 +69,19 @@ export default class Tabla {
     localStorage.setItem("tareas", JSON.stringify(this._tareas));
   }
 
-  _compAge(x, y) {
+  _compTime(x, y) {
     if (x.dateFin > y.dateFin) {
-      return -1;
+      return 1;
     }
 
     if (x.dateFin < y.dateFin) {
-      return 1;
+      return -1;
     }
     return 0;
   }
 
-  showAge() {
-    this._tareas.sort(this._compAge);
+  showTime() {
+    this._tareas.sort(this._compTime);
     location.reload();
     localStorage.setItem("tareas", JSON.stringify(this._tareas));
   }
