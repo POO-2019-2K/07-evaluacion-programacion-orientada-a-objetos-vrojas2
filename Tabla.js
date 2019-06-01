@@ -114,11 +114,11 @@ export default class Tabla {
 
   _compAlpha(x, y) {
     if (x.name > y.name) {
-      return -1;
+      return 1;
     }
 
     if (x.name < y.name) {
-      return 1;
+      return -1;
     }
     return 0;
   }

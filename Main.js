@@ -24,6 +24,7 @@ class Main {
             };
             let tarea = new Tarea(objTarea);
             tabla.addContacto(tarea);
+            tabla.showTime();
         }
     });
 
