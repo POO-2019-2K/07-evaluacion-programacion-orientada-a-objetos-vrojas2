@@ -85,4 +85,21 @@ export default class Tabla {
     location.reload();
     localStorage.setItem("tareas", JSON.stringify(this._tareas));
   }
+
+  _compAlpha(x, y) {
+    if (x.name > y.name) {
+      return -1;
+    }
+
+    if (x.name < y.name) {
+      return 1;
+    }
+    return 0;
+  }
+
+  showAlpha() {
+    this._tareas.sort(this._compAlpha);
+    location.reload();
+    localStorage.setItem("tareas", JSON.stringify(this._tareas));
+  }
 }

@@ -4,10 +4,16 @@
     color: white;
 }
 
-#buttonAge {
+#buttonAlpha {
     margin-top: 5%;
     width: 90%;
 }
+
+#buttonTime {
+    margin-top: 5%;
+    width: 90%;
+}
+
 
 .btnDelet{
     margin-left:25%;

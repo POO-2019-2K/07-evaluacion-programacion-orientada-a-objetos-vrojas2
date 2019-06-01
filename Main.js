@@ -25,7 +25,14 @@ class Main {
             let tarea = new Tarea(objTarea);
             tabla.addContacto(tarea);
         }
-        tabla.showTime();
+    });
+
+    document.querySelector("#buttonAlpha").addEventListener("click",() => {
+      tabla.showAlpha();
+    });
+
+    document.querySelector("#buttonTime").addEventListener("click", () => {
+      tabla.showTime();
     });
 
   }
