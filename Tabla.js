@@ -32,6 +32,7 @@ export default class Tabla {
     let cellDateFin = row.insertCell(1);
     let cellAge = row.insertCell(2);
     row.insertCell(3);
+    row.insertCell(4);
 
     cellName.appendChild(document.createTextNode(tarea.name));
     cellDateFin.appendChild(document.createTextNode(tarea.getDateFinAsString()));
@@ -44,6 +45,8 @@ export default class Tabla {
 
     this._tareas.push(objTarea);
     this._addDeleteBtn(row, tarea);
+    this._addEditBtn(row, tarea);
+
   }
   
   _addDeleteBtn(row, tarea){ 
@@ -67,6 +70,29 @@ export default class Tabla {
     });
     location.reload();
     localStorage.setItem("tareas", JSON.stringify(this._tareas));
+  }
+
+  _addEditBtn(row, tarea){ 
+    let btnDelete = document.createElement("input");
+    btnDelete.type = "button";
+    btnDelete.value = "Editar";
+    row.cells[4].innerHTML = ""; 
+    btnDelete.className = "btnEdit";
+    row.cells[4].appendChild(btnDelete);
+    btnDelete.addEventListener("click", () => { 
+      this._editRow(tarea);
+    }); 
+  }
+
+  _editRow(tarea){
+    /*this._tareas = JSON.parse(localStorage.getItem("tareas"));
+    this._tareas.forEach((e, index) => {
+      if(e.name === tarea.name) {
+        this._tareas.splice(index, 1);
+      }
+    });
+    location.reload();
+    localStorage.setItem("tareas", JSON.stringify(this._tareas));*/
   }
 
   _compTime(x, y) {
