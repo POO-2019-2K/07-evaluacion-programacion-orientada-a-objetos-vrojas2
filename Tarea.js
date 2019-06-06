@@ -1,7 +1,7 @@
 export default class Tarea {
     constructor(tarea) {
       this._name = tarea.name.toUpperCase();
-      this._dateFin = tarea.dateFin;
+      this._dateFin = new  Date(tarea.dateFin);
       this._months = [
         "Ene", "Feb",
         "Mar", "Abr",
@@ -37,5 +37,21 @@ export default class Tarea {
     let age = Math.trunc(differenceMs / oneYear);
   
     return age+1;
+  }
+
+  _getNumberAs2Digits(number) {
+    if(number < 10) {
+      return "0"+number;
+    }
+    return number;
+  }
+
+  getDiasForDate() {
+    let {dateFin} = this;
+    let date = dateFin.getFullYear() +
+    "-" +
+    this._getNumberAs2Digits(dateFin.getMonth()+1) +
+    "-" + this._getNumberAs2Digits(dateFin.getDate()+1);
+    return date;
   }
 }

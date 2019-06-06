@@ -23,7 +23,7 @@ class Main {
                 dateFin
             };
             let tarea = new Tarea(objTarea);
-            tabla.addContacto(tarea);
+            tabla.addHomework(tarea);
             tabla.showTime();
         }
     });
