@@ -48,6 +48,7 @@ export default class Tarea {
 
   getDiasForDate() {
     let {dateFin} = this;
+    console.log(dateFin);
     let date = dateFin.getFullYear() +
     "-" +
     this._getNumberAs2Digits(dateFin.getMonth()+1) +

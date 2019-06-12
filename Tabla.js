@@ -10,11 +10,13 @@ export default class Tabla {
 
   _initTables() {
     let lsContactos = JSON.parse(localStorage.getItem("tareas"));
+    console.log(lsContactos)
     if(lsContactos === null){
       return;
     }
     lsContactos.forEach((e, index) => {
       e.dateFin = new Date(e.dateFin);
+   
       this._showInTable(new Tarea(e));
     });
   }
@@ -100,9 +102,11 @@ export default class Tabla {
     btnSave.className = "btnSave";
     row.cells[3].appendChild(btnSave);
     btnSave.addEventListener("click", () => {
+      let x =  inputFinDate.value.split("-") 
+      console.log(x)
       let newHomework = {
         name: inputName.value,
-        dateFin: inputFinDate.value
+        dateFin: new Date( x[0] , x[1] , x[2]) 
       };
       this._saveEditar(row, tarea, newHomework)
     });
@@ -130,11 +134,16 @@ export default class Tabla {
   }
 
   _saveEditar(row, tarea, newHomework) {
+    
     let pos = this._searchHomework(tarea.name);
+    console.log(  newHomework.dateFin)
+
+
     this._tareas[pos] = newHomework;
     localStorage.setItem("tareas", JSON.stringify(this._tareas));
+    console.log(this._tareas)
     location.reload();
-    this._cancelEdit(row, new Tarea(newHomework));
+    //this._cancelEdit(row, new Tarea(newHomework));
   }
 
   _cancelEdit(row, tarea) {
